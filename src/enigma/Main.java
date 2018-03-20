@@ -10,13 +10,16 @@ import java.util.Set;
 
 public class Main
 {
-    private static Integer abs(Integer x) {
+    private static Integer abs(Integer x)
+    {
         return Math.abs(x);
     }
 
-    private static Integer random(Random r) {
-        return abs(r.nextInt()%5);
+    private static Integer random(Random r)
+    {
+        return abs(r.nextInt() % 5);
     }
+
     private static Integer[] generatePassword()
     {
         Integer[] ret = new Integer[4];
@@ -24,17 +27,20 @@ public class Main
         Integer first = random(random);
         ret[0] = first;
         Integer second = ret[0];
-        while (second.equals(ret[0])){
+        while (second.equals(ret[0]))
+        {
             second = random(random);
         }
         ret[1] = second;
-        Integer  third = second;
-        while (third.equals(second) || third.equals(first)){
+        Integer third = second;
+        while (third.equals(second) || third.equals(first))
+        {
             third = random(random);
         }
         ret[2] = third;
         Integer fourth = third;
-        while(fourth.equals(third) || fourth.equals(second) || fourth.equals(first)){
+        while (fourth.equals(third) || fourth.equals(second) || fourth.equals(first))
+        {
             fourth = random(random);
         }
         ret[3] = fourth;
@@ -96,7 +102,8 @@ public class Main
             {
                 return false;
             }
-        } else {
+        } else
+        {
             System.out.println("Please no dups");
             return false;
         }
@@ -138,8 +145,10 @@ public class Main
         return null;
     }
 
-    static void printFourIntegerArray(Integer[] array) {
-        for (int i = 0; i < array.length; i++) {
+    static void printFourIntegerArray(Integer[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
             System.out.print(array[i]);
         }
         System.out.println();
@@ -150,7 +159,7 @@ public class Main
         Integer[] password = generatePassword();
         while (!mainLoop(password))
         {
-            printFourIntegerArray(password);
+//        printFourIntegerArray(password);
         }
         System.out.println("You won!");
     }
